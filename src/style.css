@@ -1,0 +1,26 @@
+:root{
+  --bg: #E7E6E1;
+  --ink: #16171B;
+  --ink-soft: #5C5E66;
+  --accent: #3B39E0;
+  --accent-tint: #DEDDFB;
+  --line: rgba(22,23,27,0.14);
+  --avatar-a: #F5F4F1;
+  --avatar-b: #A9ABB6;
+  --avatar-c: #5E6070;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  margin:0; padding:0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+#app{
+  min-height: 100vh;
+}
