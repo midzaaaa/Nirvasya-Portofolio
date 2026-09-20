@@ -3,19 +3,22 @@ import { ref } from 'vue'
 
 const projects = ref([
   {
-    id: '01',
-    title: 'Web Data E-PKL',
-    category: 'Fullstack / UI UX',
-    year: '2025',
-    repo: 'https://github.com/midzaaaa/latihanlaravel2.git'
+   id: '01',
+    title: 'M.A.S - Food Delivery',
+    category: 'Frontend Development',
+    year: '2026',
+    repo: 'https://github.com/midzaaaa/food-mas-web.git',
+    live: 'https://food-mas-web.vercel.app/' 
   },
   {
     id: '02',
-    title: 'Web Nonton Hub',
+    title: 'Nirvasya - Finance',
     category: 'Creative Development',
     year: '2026',
-    repo: 'https://github.com/midzaaaa/NontonHUB.git'
-  }
+    repo: 'https://github.com/midzaaaa/Nirvasya-Finance.git',
+    live: 'https://nirvasya-finance.vercel.app/'
+  },
+
 ])
 </script>
 
@@ -32,9 +35,10 @@ const projects = ref([
         </div>
 
         <div class="project-meta">
-          <span class="project-year">{{ project.year }}</span>
-          <a :href="project.repo" target="_blank" rel="noopener noreferrer" class="arrow-icon">↗</a>
-        </div>
+  <span class="project-year">{{ project.year }}</span>
+  <a v-if="project.live" :href="project.repo" target="_blank" rel="noopener noreferrer" class="code-link">Code</a>
+  <a :href="project.live || project.repo" target="_blank" rel="noopener noreferrer" class="arrow-icon" :title="project.live ? 'Live Demo' : 'Source Code'">↗</a>
+</div>
       </article>
     </div>
   </section>
@@ -110,6 +114,17 @@ const projects = ref([
   opacity: 0.6;
 }
 
+.code-link {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  text-decoration: underline;
+  color: inherit;
+  font-family: monospace;
+}
+
+.code-link:hover {
+  opacity: 1;
+}
 .arrow-icon {
   width: 36px;
   height: 36px;
